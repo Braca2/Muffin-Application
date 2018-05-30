@@ -1,0 +1,59 @@
+{
+  "project_info": {
+    "project_number": "339702740613",
+    "firebase_url": "https://muffin-application.firebaseio.com",
+    "project_id": "muffin-application",
+    "storage_bucket": "muffin-application.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:339702740613:android:c510d3fae33d7e8d",
+        "android_client_info": {
+          "package_name": "com.example.braca.muffinapplication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "339702740613-b27o3hs62gjprbm4q1a1o6gp0spjsk9b.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.braca.muffinapplication",
+            "certificate_hash": "7435b040254a73247e41fc96fc3d6dd3ca673756"
+          }
+        },
+        {
+          "client_id": "339702740613-9m32aejv9l232h6sbbfj7l3i1i85kmja.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "339702740613-9m32aejv9l232h6sbbfj7l3i1i85kmja.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAWCmo6pFoduHNP6OUgkVzum8zBK89oVpY"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "339702740613-9m32aejv9l232h6sbbfj7l3i1i85kmja.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
