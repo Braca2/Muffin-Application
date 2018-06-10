@@ -11,6 +11,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.storage.StorageReference;
 
 import java.io.File;
+import java.util.HashMap;
 
 import objects.User;
 
@@ -31,9 +32,9 @@ public class MainActivity extends AppCompatActivity {
         EditText cellphone = (EditText) findViewById(R.id.textBox_cellphone);
 
         //second step to get the actual data from the elements
-        String nameString = Name.getText().toString();
-        String lastnameString = Lastname.getText().toString();
-        Integer cellphoneInt =Integer.parseInt( cellphone.getText().toString());
+        String nameString = Name.getText().toString().trim();
+        String lastnameString = Lastname.getText().toString().trim();
+        Integer cellphoneInt =Integer.parseInt( cellphone.getText().toString().trim());
 
         //second step bis? to get the button and define the listener
         Button goSave = (Button) findViewById(R.id.btn_save);
@@ -50,12 +51,17 @@ public class MainActivity extends AppCompatActivity {
                 //1- create a child  in the root object (remember to show the json from firebase)
                 //todo check if this workaround works on db
                 dbReference.child(firtU.getUserId().toString());//create a unique child for each time
-                dbReference.push().child(firtU.getUserId().toString());
+               //dbReference.push().child(firtU.getUserId().toString());
 
 
-
-
+                HashMap<String, String> datamap = new HashMap<String, String>();
+                datamap.put("FirstName",firtU.getFirstName());
+                datamap.put("LastName",firtU.getLastName());
+                datamap.put("PhoneNumer",firtU.getCellphone().toString());
                 //2- assign the values to store
+
+                //todo test the  firstU as object
+                dbReference.push().setValue(datamap);//I must try set the object as value
             }
         });
 
