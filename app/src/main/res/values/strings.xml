@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Muffin Application</string>
+    <string name="Cellphone">Cellphone</string>
+    <string name="LastName">Last Name</string>
 </resources>
