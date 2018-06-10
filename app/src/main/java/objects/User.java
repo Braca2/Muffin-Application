@@ -23,6 +23,7 @@ public class User {
 
     public User(String firstName, Integer cellphone){
         User user = new User();
+        user.setUserId(UUID.randomUUID());
         user.setFirstName(firstName);
         user.setLastName(""); //no null
         user.setCellphone(cellphone);
