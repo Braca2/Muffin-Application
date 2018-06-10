@@ -1,24 +1,27 @@
 package objects;
 
+import java.util.Random;
+import java.util.UUID;
+
 public class User {
-
     //clase, define comportamiento los atributos (molde a seguir)
-
+    private UUID userId; //todo find how it indexed each user so the data wont be overwrited
     private String firstName;
     private String lastName;
     private Integer cellphone; //atributos
 
 
-    public void User(){} //genero entidades unicas ()
+    public User(){} //genero entidades unicas ()
 
-    public void User(String firstName, String lastName, Integer cellphone){
+    public User(String firstName, String lastName, Integer cellphone){
         User user = new User();
+        user.setUserId(UUID.randomUUID());
         user.setFirstName(firstName);
         user.setLastName(lastName);
         user.setCellphone(cellphone);
     }
 
-    public void User(String firstName, Integer cellphone){
+    public User(String firstName, Integer cellphone){
         User user = new User();
         user.setFirstName(firstName);
         user.setLastName(""); //no null
@@ -47,5 +50,13 @@ public class User {
 
     public void setCellphone(Integer cellphone) {
         this.cellphone = cellphone;
+    }
+
+    public UUID getUserId() {
+        return userId;
+    }
+
+    public void setUserId(UUID userId) {
+        this.userId = userId;
     }
 }

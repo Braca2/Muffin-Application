@@ -1,22 +1,18 @@
 package com.example.braca.muffinapplication;
 
-import android.net.Uri;
-import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
-import com.google.firebase.storage.UploadTask;
 
 import java.io.File;
+
+import objects.User;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -36,11 +32,13 @@ public class MainActivity extends AppCompatActivity {
 
         //second step to get the actual data from the elements
         String nameString = Name.getText().toString();
-        String lastnameString = Name.getText().toString();
-        String cellphoneString = Name.getText().toString();
+        String lastnameString = Lastname.getText().toString();
+        Integer cellphoneInt =Integer.parseInt( cellphone.getText().toString());
 
         //second step bis? to get the button and define the listener
         Button goSave = (Button) findViewById(R.id.btn_save);
+
+        final User firtU = new User(nameString , lastnameString , cellphoneInt);
 
         //third step define the reference to db (the root of the json doc)
         dbReference = FirebaseDatabase.getInstance().getReference();
@@ -48,7 +46,16 @@ public class MainActivity extends AppCompatActivity {
         goSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+            //steps to store in the data base
+                //1- create a child  in the root object (remember to show the json from firebase)
+                //todo check if this workaround works on db
+                dbReference.child(firtU.getUserId().toString());//create a unique child for each time
+                dbReference.push().child(firtU.getUserId().toString());
 
+
+
+
+                //2- assign the values to store
             }
         });
 
