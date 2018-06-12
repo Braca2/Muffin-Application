@@ -34,12 +34,12 @@ public class MainActivity extends AppCompatActivity {
         //second step to get the actual data from the elements
         String nameString = Name.getText().toString().trim();
         String lastnameString = Lastname.getText().toString().trim();
-        Integer cellphoneInt =Integer.parseInt( cellphone.getText().toString().trim());
+        Integer cellphoneInt = Integer.parseInt( cellphone.getText().toString().trim());
 
         //second step bis? to get the button and define the listener
         Button goSave = (Button) findViewById(R.id.btn_save);
 
-        final User firtU = new User(nameString , lastnameString , cellphoneInt);
+        final User firstU = new User(nameString , lastnameString , cellphoneInt);
 
         //third step define the reference to db (the root of the json doc)
         dbReference = FirebaseDatabase.getInstance().getReference();
@@ -50,14 +50,14 @@ public class MainActivity extends AppCompatActivity {
             //steps to store in the data base
                 //1- create a child  in the root object (remember to show the json from firebase)
                 //todo check if this workaround works on db
-                dbReference.child(firtU.getUserId().toString());//create a unique child for each time
-               //dbReference.push().child(firtU.getUserId().toString());
+                dbReference.child(firstU.getUserId().toString());//create a unique child for each time
+               //dbReference.push().child(firstU.getUserId().toString());
 
 
                 HashMap<String, String> datamap = new HashMap<String, String>();
-                datamap.put("FirstName",firtU.getFirstName());
-                datamap.put("LastName",firtU.getLastName());
-                datamap.put("PhoneNumer",firtU.getCellphone().toString());
+                datamap.put("FirstName", firstU.getFirstName());
+                datamap.put("LastName", firstU.getLastName());
+                datamap.put("PhoneNumer", firstU.getCellphone().toString());
                 //2- assign the values to store
 
                 //todo test the  firstU as object
