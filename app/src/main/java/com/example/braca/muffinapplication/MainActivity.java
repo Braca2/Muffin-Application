@@ -9,8 +9,6 @@ import android.widget.EditText;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
-import java.util.HashMap;
-
 import objects.User;
 
 
@@ -24,28 +22,37 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         dbReference = FirebaseDatabase.getInstance().getReference();
-        //firt setp to get all the element from the view
+        //first step to get all the element from the view
         final EditText name = findViewById(R.id.textBox_Name);
         final EditText lastName = findViewById(R.id.textBox_lastName);
         final EditText cellphone = findViewById(R.id.textBox_cellphone);
         name.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                name.setText("");
+                if (name.getText().toString().equals("Name")){
+                    name.setText("");
+                }
+
             }
         });
 
         lastName.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                lastName.setText("");
+                if (lastName.getText().toString().equals("Last Name")){
+                    lastName.setText("");
+                }
+
             }
         });
 
         cellphone.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                cellphone.setText("");
+                if(cellphone.getText().toString().equals("Cellphone")){
+                    cellphone.setText("");
+                }
+
             }
         });
         Button goSave = findViewById(R.id.btn_save);
@@ -62,15 +69,7 @@ public class MainActivity extends AppCompatActivity {
                 User user = new User(nameString,lastNameString,cellphoneString);
 
                 dbReference.child(user.getId());
-                //1- create a child  in the root object (remember to show the json from firebase)
-                //todo check if this workaround works on
-                HashMap<String, String> datamap = new HashMap<>();
-                datamap.put("FirstName",user.getFirstName());
-                datamap.put("LastName", user.getLastName());
-                datamap.put("PhoneNumber", user.getCellphone());
-                //todo test the  firstU as object
-                //2- assign the values to store
-                dbReference.push().setValue(datamap);
+                dbReference.push().setValue(user);
             }
         });
 
