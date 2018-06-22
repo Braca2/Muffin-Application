@@ -26,13 +26,13 @@ public class MainActivity extends AppCompatActivity {
         final EditText name = findViewById(R.id.textBox_Name);
         final EditText lastName = findViewById(R.id.textBox_lastName);
         final EditText cellphone = findViewById(R.id.textBox_cellphone);
+
         name.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (name.getText().toString().equals("Name")){
                     name.setText("");
                 }
-
             }
         });
 
@@ -42,7 +42,6 @@ public class MainActivity extends AppCompatActivity {
                 if (lastName.getText().toString().equals("Last Name")){
                     lastName.setText("");
                 }
-
             }
         });
 
@@ -52,9 +51,9 @@ public class MainActivity extends AppCompatActivity {
                 if(cellphone.getText().toString().equals("Cellphone")){
                     cellphone.setText("");
                 }
-
             }
         });
+
         Button goSave = findViewById(R.id.btn_save);
 
         goSave.setOnClickListener(new View.OnClickListener() {
@@ -66,17 +65,11 @@ public class MainActivity extends AppCompatActivity {
                 String nameString = name.getText().toString().trim();
                 String lastNameString = lastName.getText().toString().trim();
                 String cellphoneString = cellphone.getText().toString().trim();
-                User user = new User(nameString,lastNameString,cellphoneString);
+                User user = new User(nameString, lastNameString, cellphoneString);
 
                 dbReference.child(user.getId());
                 dbReference.push().setValue(user);
             }
         });
-
-
-
-
     }
-
-
 }

@@ -7,10 +7,7 @@ public class User {
     private String id;
     private String firstName;
     private String lastName;
-    private String cellphone; //atributos
-
-
-    public User(){} //genero entidades unicas ()
+    private String cellphone;
 
     public User(String firstName, String lastName, String cellphone){
         this.setId(UUID.randomUUID().toString());
@@ -57,5 +54,4 @@ public class User {
     public void setId(String id) {
         this.id = id;
     }
-
 }
