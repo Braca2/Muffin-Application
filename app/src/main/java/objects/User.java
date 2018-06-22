@@ -1,32 +1,29 @@
 package objects;
 
-import java.util.Random;
 import java.util.UUID;
 
 public class User {
-    //clase, define comportamiento los atributos (molde a seguir)
-    private UUID userId; //todo find how it indexed each user so the data wont be overwrited
+
+    private String id;
     private String firstName;
     private String lastName;
-    private Integer cellphone; //atributos
+    private String cellphone; //atributos
 
 
     public User(){} //genero entidades unicas ()
 
-    public User(String firstName, String lastName, Integer cellphone){
-        User user = new User();
-        user.setUserId(UUID.randomUUID());
-        user.setFirstName(firstName);
-        user.setLastName(lastName);
-        user.setCellphone(cellphone);
+    public User(String firstName, String lastName, String cellphone){
+        this.setId(UUID.randomUUID().toString());
+        this.setFirstName(firstName);
+        this.setLastName(lastName);
+        this.setCellphone(cellphone);
     }
 
-    public User(String firstName, Integer cellphone){
-        User user = new User();
-        user.setUserId(UUID.randomUUID());
-        user.setFirstName(firstName);
-        user.setLastName(""); //no null
-        user.setCellphone(cellphone);
+    public User(String firstName, String cellphone){
+        this.setId(UUID.randomUUID().toString());
+        this.setFirstName(firstName);
+        this.setLastName(""); //no null
+        this.setCellphone(cellphone);
     }
 
     public String getFirstName() {
@@ -45,19 +42,20 @@ public class User {
         this.lastName = lastName;
     }
 
-    public Integer getCellphone() {
+    public String getCellphone() {
         return cellphone;
     }
 
-    public void setCellphone(Integer cellphone) {
+    public void setCellphone(String cellphone) {
         this.cellphone = cellphone;
     }
 
-    public UUID getUserId() {
-        return userId;
+    public String getId() {
+        return id;
     }
 
-    public void setUserId(UUID userId) {
-        this.userId = userId;
+    public void setId(String id) {
+        this.id = id;
     }
+
 }
