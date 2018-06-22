@@ -24,17 +24,36 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         dbReference = FirebaseDatabase.getInstance().getReference();
+        //firt setp to get all the element from the view
+        final EditText name = findViewById(R.id.textBox_Name);
+        final EditText lastName = findViewById(R.id.textBox_lastName);
+        final EditText cellphone = findViewById(R.id.textBox_cellphone);
+        name.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                name.setText("");
+            }
+        });
+
+        lastName.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                lastName.setText("");
+            }
+        });
+
+        cellphone.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                cellphone.setText("");
+            }
+        });
         Button goSave = findViewById(R.id.btn_save);
 
         goSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 //todo must have authentication PR first in this case will be just write over users
-
-                //firt setp to get all the element from the view
-                EditText name = findViewById(R.id.textBox_Name);
-                EditText lastName = findViewById(R.id.textBox_lastName);
-                EditText cellphone = findViewById(R.id.textBox_cellphone);
 
                 //second step to get the actual data from the elements
                 String nameString = name.getText().toString().trim();
