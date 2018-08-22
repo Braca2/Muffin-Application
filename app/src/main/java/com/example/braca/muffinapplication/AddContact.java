@@ -1,7 +1,7 @@
 package com.example.braca.muffinapplication;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -12,14 +12,14 @@ import com.google.firebase.database.FirebaseDatabase;
 import objects.User;
 
 
-public class MainActivity extends AppCompatActivity {
+public class AddContact extends AppCompatActivity {
 
     private DatabaseReference dbReference;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_contact);
 
         dbReference = FirebaseDatabase.getInstance().getReference();
         //first step to get all the element from the view
