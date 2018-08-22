@@ -1,0 +1,67 @@
+{
+  "project_info": {
+    "project_number": "535056189547",
+    "firebase_url": "https://muffin-application-14792.firebaseio.com",
+    "project_id": "muffin-application-14792",
+    "storage_bucket": "muffin-application-14792.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:535056189547:android:c510d3fae33d7e8d",
+        "android_client_info": {
+          "package_name": "com.example.braca.muffinapplication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "535056189547-4g5555pdihhjv6s50ud3shjlnk099ckv.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.braca.muffinapplication",
+            "certificate_hash": "b5c76f86e91f2e254de69602b55713bfa89ca836"
+          }
+        },
+        {
+          "client_id": "535056189547-ukrl0o7r90l6rjlb08vvj2sanspn6auf.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.braca.muffinapplication",
+            "certificate_hash": "7435b040254a73247e41fc96fc3d6dd3ca673756"
+          }
+        },
+        {
+          "client_id": "535056189547-354tuafdgfuhj8gha0bk7a0l2ipbnccv.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "535056189547-354tuafdgfuhj8gha0bk7a0l2ipbnccv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD5tmobxrGXVkGX617hsK7n-RogEuchwVw"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "535056189547-354tuafdgfuhj8gha0bk7a0l2ipbnccv.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
