@@ -1,6 +1,10 @@
 <resources>
-    <string name="app_name">Muffin Application</string>
+    <string name="app_name">Bracas black List</string>
     <string name="Cellphone">Cellphone</string>
     <string name="LastName">Last Name</string>
     <string name="Save">Save</string>
+    <string name="title_activity_list">ListActivity</string>
+    <string name="Add_Contact">Add Contact</string>
+    <string name="Contact_List">Contact List</string>
+    <string name="Cancel">Cancel</string>
 </resources>
