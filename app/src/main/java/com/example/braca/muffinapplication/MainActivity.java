@@ -12,6 +12,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        Button goSave = findViewById(R.id.btn_save);
 
 
         Button btnAdd = findViewById(R.id.btnAddContact);
@@ -27,7 +28,4 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, AddContact.class);
         startActivity(intent);
     }
-
-
-
 }
